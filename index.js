@@ -38,7 +38,7 @@ mongoose.connection.on("connected", (err, res) => {
   
   app.use(
   cors({
-    origin: "*",
+    origin: "https://minimart-five.vercel.app/",
     credentials: true, // allow cookies, authorization headers
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     // Allow the headers you are sending (like Content-Type)
@@ -89,7 +89,7 @@ app.post('/create-checkout-session', verifyToken, async (req, res) => {
             userId: req.user._id.toString(),
             cart: JSON.stringify(cart),
           },
-success_url: `http://127.0.0.1:5500/success.html?orderData=${encodeURIComponent(JSON.stringify(data))}`,
+success_url: `https://minimart-five.vercel.app/success.html?orderData=${encodeURIComponent(JSON.stringify(data))}`,
 
           cancel_url: `${YOUR_DOMAIN}/cart.html`,
         });
