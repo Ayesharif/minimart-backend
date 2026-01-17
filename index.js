@@ -38,7 +38,7 @@ mongoose.connection.on("connected", (err, res) => {
   
   app.use(
   cors({
-    origin: "https://minimart-five.vercel.app/",
+    origin: "https://minimart-five.vercel.app",
     credentials: true, // allow cookies, authorization headers
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     // Allow the headers you are sending (like Content-Type)
@@ -56,7 +56,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.static('public'));
 
-const YOUR_DOMAIN = 'http://localhost:3000';
+const YOUR_DOMAIN = 'https://minimart-backend-nine.vercel.app';
 
 app.post('/create-checkout-session', verifyToken, async (req, res) => {
 
